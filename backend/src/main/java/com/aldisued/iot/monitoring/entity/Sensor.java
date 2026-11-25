@@ -9,6 +9,8 @@ import jakarta.persistence.Table;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 @Table(name = "sensors")
 @Entity
@@ -22,6 +24,7 @@ public class Sensor {
   private String name;
 
   @Column(nullable = false)
+  @Enumerated(EnumType.STRING)
   private SensorType type;
 
   public Sensor() {}
