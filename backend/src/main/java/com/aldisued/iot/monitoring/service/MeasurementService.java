@@ -16,10 +16,10 @@ public class MeasurementService {
     this.sensorReadingRepository = sensorReadingRepository;
   }
 
-  public List<Double> getMeasurementValuesBySensorType(SensorType sensorType, LocalDateTime from,
-      LocalDateTime to) {
-    // TODO: Task 8
-    return List.of();
+  public List<Double> getMeasurementValuesBySensorType(
+          SensorType sensorType, LocalDateTime from, LocalDateTime to) {
+    return sensorReadingRepository.findValuesBySensorTypeAndTimeRange(
+            sensorType, from, to);
   }
 
   public Optional<Double> getAverageTemperature(LocalDateTime from, LocalDateTime to) {
